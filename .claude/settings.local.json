@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/bernardomesquita/projetos/**)",
+      "Bash(npx create-next-app@latest twk-nexus --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack)"
+    ]
+  }
+}
