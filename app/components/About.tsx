@@ -70,7 +70,7 @@ export default function About() {
                   fontFamily: "var(--font-body)",
                 }}
               >
-                Faria Lima · São Paulo · Desde 2019
+                Centro · Esteio · Desde 2019
               </span>
               <p
                 style={{
@@ -142,8 +142,8 @@ export default function About() {
                   margin: 0,
                 }}
               >
-                Com mais de 800 membros ativos e três unidades em São Paulo, somos
-                hoje referência em coworking premium na Faria Lima.
+                Com mais de 800 membros ativos e três unidades em Esteio, somos
+                hoje referência em coworking premium em Esteio.
               </p>
             </div>
           </div>
