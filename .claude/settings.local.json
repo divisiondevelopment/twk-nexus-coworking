@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Read(//Users/bernardomesquita/projetos/**)",
-      "Bash(npx create-next-app@latest twk-nexus --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack)"
+      "Bash(npx create-next-app@latest twk-nexus --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(npx tsc *)",
+      "Bash(npm install *)",
+      "Bash(node -e \"require\\('lucide-react'\\)\")",
+      "Bash(node *)"
     ]
   }
 }
