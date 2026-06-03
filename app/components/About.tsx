@@ -14,8 +14,9 @@ const CLIP_PATH =
 export default function About() {
   return (
     <section
-      id="sobre"
-      style={{ padding: "0 24px 120px", backgroundColor: "rgb(250,250,250)" }}
+      id="historia"
+      className="px-6 pb-16 md:pb-[120px]"
+      style={{ backgroundColor: "rgb(250,250,250)" }}
     >
       <div className="max-w-[1300px] mx-auto flex flex-col gap-16">
 
@@ -97,10 +98,10 @@ export default function About() {
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-20">
             <div className="flex-1">
               <span
-                className="text-xs font-medium uppercase tracking-[0.48px] block mb-5"
+                className="text-sm md:text-xs font-medium uppercase tracking-[0.48px] block mb-5"
                 style={{ color: "rgba(16,16,15,0.88)" }}
               >
-                Sobre o espaço
+                História
               </span>
               <h2
                 style={{
@@ -123,27 +124,28 @@ export default function About() {
               style={{ maxWidth: 520 }}
             >
               <p
+                className="text-base md:text-[15px]"
                 style={{
-                  fontSize: 15,
                   lineHeight: 1.85,
                   color: "rgba(28,26,23,0.65)",
                   margin: 0,
                 }}
               >
-                Fundado em 2019, o TWK Nexus nasceu com uma missão clara: criar um
-                ambiente onde profissionais e empresas pudessem não apenas trabalhar,
-                mas crescer juntos.
+                A TWK Nexus nasceu com o propósito de conectar pessoas, negócios e
+                oportunidades em um único ecossistema. Mais do que disponibilizar
+                espaços profissionais, criamos ambientes que impulsionam conexões,
+                desenvolvimento e crescimento empresarial.
               </p>
               <p
+                className="text-base md:text-[15px]"
                 style={{
-                  fontSize: 15,
                   lineHeight: 1.85,
                   color: "rgba(28,26,23,0.65)",
                   margin: 0,
                 }}
               >
-                Com mais de 800 membros ativos e três unidades em Esteio, somos
-                hoje referência em coworking premium em Esteio.
+                O nome <em style={{ fontStyle: "italic", color: "rgba(28,26,23,0.82)" }}>Nexus</em> representa
+                exatamente isso: o elo entre talento, inovação e resultados.
               </p>
             </div>
           </div>

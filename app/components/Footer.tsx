@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const LinkedInIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -27,42 +29,44 @@ const socialLinks = [
   { icon: YouTubeIcon, href: "#", label: "YouTube" },
 ];
 
-const footerLinks = {
-  Espaços: ["Coworking Aberto", "Sala Privativa", "Escritório Virtual", "Salas de Reunião", "Eventos"],
-  Empresa: ["Sobre nós", "Comunidade", "Blog", "Imprensa", "Trabalhe conosco"],
-  Suporte: ["Central de ajuda", "Fale conosco", "Termos de uso", "Privacidade"],
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  Espaços: [
+    { label: "Salas de Reunião", href: "#salas-de-reuniao" },
+    { label: "Auditório",        href: "#auditorio"       },
+    { label: "Cozinha Gourmet",  href: "#cozinha-gourmet" },
+  ],
+  Empresa: [
+    { label: "Sobre nós", href: "#historia" },
+    { label: "História",  href: "#historia" },
+    { label: "Eventos",   href: "#eventos"  },
+  ],
+  Contato: [
+    { label: "(51) 9 9999-9999",        href: "https://wa.me/5551999999999" },
+    { label: "contato@twknexus.com.br", href: "mailto:contato@twknexus.com.br" },
+    { label: "Garibaldi, 240 – Sala 305\nCentro – Esteio/RS", href: "#contato" },
+  ],
 };
 
 export default function Footer() {
   return (
     <footer
-      style={{ backgroundColor: "#001d3d", padding: "88px 24px 56px" }}
+      className="px-6 pt-12 pb-10 md:pt-[88px] md:pb-14"
+      style={{ backgroundColor: "#001d3d" }}
     >
       <div className="max-w-[1300px] mx-auto">
         <div
-          className="grid gap-10 mb-16"
-          style={{ gridTemplateColumns: "2fr repeat(3, 1fr)" }}
+          className="grid gap-8 md:gap-10 mb-10 md:mb-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
         >
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <span
-                className="text-base font-bold tracking-[-0.5px] text-white"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                TWK
-              </span>
-              <span
-                className="text-base font-bold tracking-[-0.5px]"
-                style={{
-                  color: "rgba(255,255,255,0.45)",
-                  fontFamily: "var(--font-display)",
-                }}
-              >
-                NEXUS
-              </span>
-            </div>
+            <Image
+              src="/logo-twk-nexus.png"
+              alt="TWK Nexus"
+              width={1024}
+              height={487}
+              style={{ height: 32, width: "auto", alignSelf: "flex-start" }}
+            />
             <p
-              className="text-sm leading-6 max-w-xs"
+              className="text-base md:text-sm leading-6 max-w-xs"
               style={{ color: "rgba(255,255,255,0.56)" }}
             >
               Um lugar onde trabalhar é bom. De verdade.
@@ -85,36 +89,35 @@ export default function Footer() {
               ))}
             </div>
             <address
-              className="text-xs not-italic mt-2"
+              className="text-sm md:text-xs not-italic mt-2"
               style={{ color: "rgba(255,255,255,0.45)" }}
             >
-              Av. Brigadeiro Faria Lima, 3477
+              Garibaldi, 240 – Sala 305
               <br />
-              Itaim Bibi, São Paulo — SP
-              <br />
-              04538-133
+              Centro – Esteio/RS
             </address>
           </div>
 
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section} className="flex flex-col gap-3">
               <p
-                className="text-xs font-medium uppercase tracking-[0.48px] mb-1"
+                className="text-sm md:text-xs font-medium uppercase tracking-[0.48px] mb-1"
                 style={{ color: "rgba(255,255,255,0.45)" }}
               >
                 {section}
               </p>
               {links.map((link) => (
                 <a
-                  key={link}
-                  href="#"
-                  className="text-sm font-medium transition-opacity duration-150 hover:opacity-70"
+                  key={link.label}
+                  href={link.href}
+                  className="text-base md:text-sm font-medium transition-opacity duration-150 hover:opacity-70"
                   style={{
                     color: "rgba(255,255,255,0.72)",
                     textDecoration: "none",
+                    whiteSpace: "pre-line",
                   }}
                 >
-                  {link}
+                  {link.label}
                 </a>
               ))}
             </div>
@@ -126,7 +129,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <p
-            className="text-xs"
+            className="text-sm md:text-xs"
             style={{ color: "rgba(255,255,255,0.45)" }}
           >
             © 2026 TWK Nexus Coworking. Todos os direitos reservados.
@@ -134,7 +137,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a
               href="#"
-              className="text-xs transition-opacity duration-150 hover:opacity-70"
+              className="text-sm md:text-xs transition-opacity duration-150 hover:opacity-70"
               style={{
                 color: "rgba(255,255,255,0.45)",
                 textDecoration: "none",
@@ -144,7 +147,7 @@ export default function Footer() {
             </a>
             <a
               href="#"
-              className="text-xs transition-opacity duration-150 hover:opacity-70"
+              className="text-sm md:text-xs transition-opacity duration-150 hover:opacity-70"
               style={{
                 color: "rgba(255,255,255,0.45)",
                 textDecoration: "none",

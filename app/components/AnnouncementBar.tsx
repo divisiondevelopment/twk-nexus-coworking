@@ -10,18 +10,18 @@ export default function AnnouncementBar() {
       >
         Novo
       </span>
-      <span style={{ color: "rgba(255,255,255,0.24)" }} className="text-sm">
+      <span style={{ color: "rgba(255,255,255,0.24)" }} className="text-sm hidden sm:inline">
         •
       </span>
-      <span className="text-white text-sm leading-5 tracking-[-0.14px]">
-        Nexus Pro chegou — mais benefícios, mesmo preço.
+      <span className="text-white text-sm leading-5 tracking-[-0.14px] hidden sm:inline">
+        Cozinha Gourmet disponível — agende um treinamento ou workshop.
       </span>
       <a
-        href="#planos"
+        href="#espacos"
         style={{ color: "#60c0ff" }}
-        className="text-sm leading-5 tracking-[-0.14px] hover:underline"
+        className="text-base md:text-sm leading-5 tracking-[-0.14px] hover:underline"
       >
-        Ver planos →
+        Saiba mais →
       </a>
     </div>
   );

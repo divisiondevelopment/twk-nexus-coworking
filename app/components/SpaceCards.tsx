@@ -1,21 +1,112 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { useRef, useEffect } from "react";
 import Reveal from "./Reveal";
+import SpaceDialog, { type DialogSpaceData } from "./SpaceDialog";
 
-const spaces = [
-  { src: "/images/coworking-hero-1.jpg", alt: "Área aberta TWK Nexus",     title: "Coworking Aberto",    description: "Hot-desk em ambiente colaborativo, com 120 mesas disponíveis."         },
-  { src: "/images/coworking-hero-4.jpg", alt: "Sala privativa TWK Nexus",   title: "Sala Privativa",      description: "Espaço exclusivo para sua equipe, com capacidade de até 8 pessoas."  },
-  { src: "/images/coworking-hero-2.jpg", alt: "Lounge TWK Nexus",           title: "Lounge & Networking", description: "Área de convivência ideal para pausas, conversas e conexões."         },
-  { src: "/images/coworking-hero-5.jpg", alt: "Espaço de eventos TWK Nexus",title: "Espaço para Eventos", description: "Auditório equipado para até 150 pessoas, com infraestrutura completa."},
+const WA = "5551999999999";
+function waHref(msg: string) {
+  return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+
+type SpaceCardData = {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+} & DialogSpaceData;
+
+const spaces: SpaceCardData[] = [
+  {
+    src: "/images/coworking-hero-1.jpg",
+    alt: "Sala Energia TWK Nexus",
+    title: "Sala Energia",
+    description: "Ambiente estimulante com iluminação especial para máxima concentração.",
+    images: ["/images/coworking-hero-1.jpg", "/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg"],
+    features: [
+      "Iluminação especial para maior concentração",
+      "Mobiliário ergonômico e confortável",
+      "Ambiente climatizado e silencioso",
+      "Internet de alta velocidade",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Sala Energia da TWK Nexus."),
+  },
+  {
+    src: "/images/coworking-hero-2.jpg",
+    alt: "Sala Compartilhada TWK Nexus",
+    title: "Sala Compartilhada",
+    description: "Espaço colaborativo com mesas compartilhadas e comunidade produtiva.",
+    images: ["/images/coworking-hero-2.jpg", "/images/coworking-hero-4.jpg", "/images/coworking-hero-1.jpg"],
+    features: [
+      "Mesas e áreas de trabalho compartilhadas",
+      "Ambiente colaborativo e inspirador",
+      "Café e copa incluso",
+      "Internet de alta velocidade",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Sala Compartilhada da TWK Nexus."),
+  },
+  {
+    src: "/images/coworking-hero-5.jpg",
+    alt: "Auditório TWK Nexus",
+    title: "Auditório",
+    description: "Espaço completo para eventos corporativos, palestras e networking.",
+    images: ["/images/coworking-hero-5.jpg", "/images/coworking-hero-1.jpg", "/images/coworking-hero-3.jpg"],
+    features: [
+      "Espaço para palestras, treinamentos e eventos corporativos",
+      "Estrutura para networking empresarial",
+      "Ambiente moderno e funcional",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
+  },
+  {
+    src: "/images/coworking-hero-3.jpg",
+    alt: "Sala Inspiração TWK Nexus",
+    title: "Sala Inspiração",
+    description: "Ambiente criativo para brainstorming, inovação e desenvolvimento de projetos.",
+    images: ["/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg", "/images/coworking-hero-5.jpg"],
+    features: [
+      "Ambiente criativo e estimulante",
+      "Ideal para brainstorming e inovação",
+      "Design diferenciado para estimular a criatividade",
+      "Internet de alta velocidade",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Sala Inspiração da TWK Nexus."),
+  },
+  {
+    src: "/images/coworking-hero-4.jpg",
+    alt: "Auditório TWK Nexus",
+    title: "Auditório",
+    description: "Infraestrutura para grandes eventos, treinamentos e networking empresarial.",
+    images: ["/images/coworking-hero-5.jpg", "/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg"],
+    features: [
+      "Capacidade para grandes grupos",
+      "Equipamentos audiovisuais inclusos",
+      "Palco e área de networking",
+      "Suporte técnico disponível",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
+  },
+  {
+    src: "/images/coworking-hero-3.jpg",
+    alt: "Cozinha Gourmet TWK Nexus",
+    title: "Cozinha Gourmet",
+    description: "Infraestrutura para treinamentos gastronômicos, workshops e gravações culinárias.",
+    images: ["/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg", "/images/coworking-hero-5.jpg", "/images/coworking-hero-4.jpg"],
+    features: [
+      "Ambiente preparado para treinamentos gastronômicos",
+      "Ideal para pizzaiolos, chefs, confeiteiros e workshops",
+      "Espaço para gravação de conteúdo culinário",
+      "Infraestrutura para cursos, degustações e experiências gastronômicas",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Cozinha Gourmet da TWK Nexus."),
+  },
 ];
 
 const CIRCLE_SIZE = 148;
 const ZOOM_TRANSITION = "transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)";
 
-// Concave notch at top-right, all other outer corners rounded
 function buildPath(W: number, H: number): string {
   const r  = Math.round(Math.min(W, H) * 0.055);
   const NW = 62;
@@ -32,13 +123,20 @@ function buildPath(W: number, H: number): string {
   ].join(" ");
 }
 
-function SpaceCard({ space, delay }: { space: (typeof spaces)[0]; delay: number }) {
+function SpaceCard({
+  space,
+  delay,
+  onOpen,
+}: {
+  space: SpaceCardData;
+  delay: number;
+  onOpen: () => void;
+}) {
   const outerRef        = useRef<HTMLDivElement>(null);
   const clipRef         = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
   const circleRef       = useRef<HTMLDivElement>(null);
 
-  // Apply clip-path only to the image layer; measure from outer div
   useEffect(() => {
     const outer = outerRef.current;
     const clip  = clipRef.current;
@@ -69,8 +167,11 @@ function SpaceCard({ space, delay }: { space: (typeof spaces)[0]; delay: number 
 
   return (
     <Reveal delay={delay}>
-      <a href="#planos" className="flex flex-col gap-4" style={{ textDecoration: "none", cursor: "none" }}>
-        {/* Outer div: full card area, handles mouse events, not clipped */}
+      <button
+        onClick={onOpen}
+        className="flex flex-col gap-4 w-full text-left"
+        style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
+      >
         <div
           ref={outerRef}
           style={{ position: "relative", aspectRatio: "3/4", cursor: "none" }}
@@ -78,17 +179,22 @@ function SpaceCard({ space, delay }: { space: (typeof spaces)[0]; delay: number 
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Image layer — clip-path applied here only */}
+          {/* Image layer */}
           <div ref={clipRef} style={{ position: "absolute", inset: 0 }}>
             <div
               ref={imageWrapperRef}
               style={{ position: "absolute", inset: 0, transition: ZOOM_TRANSITION, transform: "scale(1)" }}
             >
-              <Image src={space.src} alt={space.alt} fill style={{ objectFit: "cover", objectPosition: "center" }} />
+              <Image
+                src={space.src}
+                alt={space.alt}
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+              />
             </div>
           </div>
 
-          {/* Arrow — outside clip layer, floats in the notch space */}
+          {/* Arrow badge */}
           <div
             className="absolute top-3.5 right-3.5 w-10 h-10 rounded-full flex items-center justify-center z-10"
             style={{
@@ -99,12 +205,13 @@ function SpaceCard({ space, delay }: { space: (typeof spaces)[0]; delay: number 
             <ArrowUpRight size={18} style={{ color: "rgb(28,26,23)" }} strokeWidth={1.75} />
           </div>
 
-          {/* Cursor-following circle — outside clip layer */}
+          {/* Cursor-following circle */}
           <div
             ref={circleRef}
             className="absolute top-0 left-0 pointer-events-none flex items-center justify-center text-center"
             style={{
-              width: CIRCLE_SIZE, height: CIRCLE_SIZE,
+              width: CIRCLE_SIZE,
+              height: CIRCLE_SIZE,
               borderRadius: "50%",
               backgroundColor: "rgba(255,255,255,0.92)",
               backdropFilter: "blur(8px)",
@@ -116,43 +223,85 @@ function SpaceCard({ space, delay }: { space: (typeof spaces)[0]; delay: number 
               zIndex: 20,
             }}
           >
-            <span className="text-xs font-medium leading-[1.45]" style={{ color: "rgb(28,26,23)" }}>
-              Ver datas disponíveis
+            <span
+              className="text-xs font-medium leading-[1.45]"
+              style={{ color: "rgb(28,26,23)" }}
+            >
+              Ver mais detalhes
             </span>
           </div>
         </div>
 
-        <div className="flex flex-col gap-1">
-          <p className="text-sm font-semibold" style={{ color: "rgb(28,26,23)" }}>{space.title}</p>
-          <p className="text-xs leading-[1.6]" style={{ color: "rgba(28,26,23,0.56)" }}>{space.description}</p>
+        <div className="flex flex-col gap-1.5">
+          <p className="text-sm font-semibold" style={{ color: "rgb(28,26,23)" }}>
+            {space.title}
+          </p>
+          <p className="text-sm md:text-xs leading-[1.6]" style={{ color: "rgba(28,26,23,0.56)" }}>
+            {space.description}
+          </p>
+          <span
+            className="text-base md:text-xs font-medium inline-flex items-center gap-1 mt-0.5"
+            style={{ color: "#007CD2" }}
+          >
+            Ver detalhes
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2.5 6h7M6.5 3l3 3-3 3" />
+            </svg>
+          </span>
         </div>
-      </a>
+      </button>
     </Reveal>
   );
 }
 
 export default function SpaceCards() {
+  const [activeSpace, setActiveSpace] = useState<SpaceCardData | null>(null);
+
   return (
-    <section style={{ backgroundColor: "rgb(250,250,250)", padding: "0 24px 120px" }}>
+    <section className="px-6 pb-16 md:pb-[120px]" style={{ backgroundColor: "rgb(250,250,250)" }}>
       <div className="max-w-[1300px] mx-auto">
         <Reveal>
           <div className="flex flex-col gap-3 mb-12">
-            <span className="text-xs font-medium uppercase tracking-[0.48px]" style={{ color: "rgba(16,16,15,0.88)" }}>
+            <span
+              className="text-sm md:text-xs font-medium uppercase tracking-[0.48px]"
+              style={{ color: "rgba(16,16,15,0.88)" }}
+            >
               Explore nossos espaços
             </span>
-            <h2 className="font-medium tracking-[-0.38px]" style={{ fontFamily: "var(--font-display)", fontSize: "38px", lineHeight: "1.2", color: "rgb(28,26,23)" }}>
+            <h2
+              className="font-medium tracking-[-0.38px]"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "38px",
+                lineHeight: "1.2",
+                color: "rgb(28,26,23)",
+              }}
+            >
               Cada espaço pensado
               <br />
               para um propósito
             </h2>
           </div>
         </Reveal>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {spaces.map((space, i) => (
-            <SpaceCard key={space.title} space={space} delay={i * 70} />
+            <SpaceCard
+              key={space.title}
+              space={space}
+              delay={i * 70}
+              onOpen={() => setActiveSpace(space)}
+            />
           ))}
         </div>
       </div>
+
+      {activeSpace && (
+        <SpaceDialog
+          space={activeSpace}
+          onClose={() => setActiveSpace(null)}
+        />
+      )}
     </section>
   );
 }

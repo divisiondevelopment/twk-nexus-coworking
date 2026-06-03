@@ -2,8 +2,9 @@ import AnnouncementBar from "./components/AnnouncementBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import SpaceCards from "./components/SpaceCards";
-import PricingTable from "./components/PricingTable";
 import About from "./components/About";
+import Cowork from "./components/Cowork";
+import Eventos from "./components/Eventos";
 import Stats from "./components/Stats";
 import Features from "./components/Features";
 import Spaces from "./components/Spaces";
@@ -23,8 +24,9 @@ export default function Home() {
         </div>
 
         <SpaceCards />
-        <PricingTable />
         <About />
+        <Cowork />
+        <Eventos />
         {/* <Stats /> */}
         {/* <Features /> */}
         {/* <Spaces /> */}
