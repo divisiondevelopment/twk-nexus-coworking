@@ -17,7 +17,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "TWK Nexus — Coworking em São Paulo",
+  title: "TWK Nexus — Coworking",
   description:
     "Espaços de trabalho modernos, infraestrutura premium e uma comunidade que acelera seu crescimento. Conheça o TWK Nexus.",
 };
