@@ -34,7 +34,8 @@ export default function Testimonials() {
   return (
     <section
       id="comunidade"
-      style={{ padding: "120px 24px", backgroundColor: "rgb(250, 250, 250)" }}
+      className="px-6 py-16 md:py-20 lg:py-[120px]"
+      style={{ backgroundColor: "rgb(250, 250, 250)" }}
     >
       <div className="max-w-[1300px] mx-auto">
 
@@ -50,7 +51,7 @@ export default function Testimonials() {
               className="font-medium tracking-[-0.38px]"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "38px",
+                fontSize: "clamp(24px, 3.5vw, 38px)",
                 lineHeight: "1.2",
                 color: "rgb(28, 26, 23)",
               }}

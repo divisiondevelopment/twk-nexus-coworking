@@ -45,7 +45,8 @@ export default function Features() {
   return (
     <section
       id="espacos"
-      style={{ backgroundColor: "rgb(247, 243, 235)", padding: "120px 24px" }}
+      className="px-6 py-16 md:py-20 lg:py-[120px]"
+      style={{ backgroundColor: "rgb(247, 243, 235)" }}
     >
       <div className="max-w-[1300px] mx-auto">
 
@@ -61,7 +62,7 @@ export default function Features() {
               className="font-medium tracking-[-0.38px]"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "38px",
+                fontSize: "clamp(24px, 3.5vw, 38px)",
                 lineHeight: "1.2",
                 color: "rgb(28, 26, 23)",
               }}

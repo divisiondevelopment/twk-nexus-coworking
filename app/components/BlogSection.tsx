@@ -26,7 +26,8 @@ export default function BlogSection() {
   return (
     <section
       id="blog"
-      style={{ backgroundColor: "rgb(255, 255, 255)", padding: "88px 16px" }}
+      className="px-6 py-16 md:py-20 lg:py-[88px]"
+      style={{ backgroundColor: "rgb(255, 255, 255)" }}
     >
       <div className="max-w-[1300px] mx-auto">
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
@@ -41,7 +42,7 @@ export default function BlogSection() {
               className="font-medium tracking-[-0.38px]"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "38px",
+                fontSize: "clamp(24px, 3.5vw, 38px)",
                 lineHeight: "1.2",
                 color: "rgb(28, 26, 23)",
               }}

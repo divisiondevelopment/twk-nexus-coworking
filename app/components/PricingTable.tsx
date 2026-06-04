@@ -11,7 +11,7 @@ const plans = [
 
 export default function PricingTable() {
   return (
-    <section style={{ backgroundColor: "rgb(250,250,250)", padding: "0 24px 120px" }}>
+    <section className="px-6 pb-16 md:pb-20 lg:pb-[120px]" style={{ backgroundColor: "rgb(250,250,250)" }}>
       <div className="max-w-[1300px] mx-auto">
 
         <Reveal>
@@ -26,7 +26,7 @@ export default function PricingTable() {
               className="font-medium tracking-[-0.38px]"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "38px",
+                fontSize: "clamp(24px, 3.5vw, 38px)",
                 lineHeight: "1.2",
                 color: "rgb(28, 26, 23)",
               }}

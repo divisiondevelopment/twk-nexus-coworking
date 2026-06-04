@@ -150,7 +150,7 @@ export default function Hero() {
           ))}
         </ul>
 
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+        <div className="flex flex-wrap items-center gap-2.5 justify-center md:justify-start">
           <a
             href="#contato"
             className="text-base md:text-[14px]"

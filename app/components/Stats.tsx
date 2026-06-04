@@ -8,13 +8,12 @@ const metrics = [
 
 export default function Stats() {
   return (
-    <section style={{ padding: "120px 24px" }}>
+    <section className="px-6 py-16 md:py-20 lg:py-[120px]">
       <div className="max-w-[1300px] mx-auto flex flex-col gap-3">
 
         <Reveal>
           <div
-            className="grid gap-0 rounded-2xl overflow-hidden"
-            style={{ gridTemplateColumns: "1fr 1fr" }}
+            className="grid gap-0 rounded-2xl overflow-hidden grid-cols-1 md:grid-cols-2"
           >
             <div
               className="p-12 flex flex-col justify-between"
@@ -85,8 +84,7 @@ export default function Stats() {
         </Reveal>
 
         <div
-          className="grid"
-          style={{ gridTemplateColumns: "1fr 1fr 1fr" }}
+          className="grid grid-cols-1 sm:grid-cols-3"
         >
           {[
             { label: "Taxa de renovação", value: "92%", bg: "rgb(250,250,250)", border: true },
