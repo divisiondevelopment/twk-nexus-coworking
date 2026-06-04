@@ -174,7 +174,7 @@ export default function Eventos() {
         {/* Event cards */}
         <Reveal delay={80}>
           <div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-8 md:pt-10"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-8 md:pt-10"
             style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
           >
             {events.map(({ icon: Icon, title, description }) => (
@@ -226,12 +226,12 @@ export default function Eventos() {
         </Reveal>
 
         {/* CTA */}
-        <Reveal delay={140}>
+        <Reveal delay={140} className="flex justify-center sm:justify-start">
           <a
             href={WA_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full text-base md:text-sm font-medium transition-all duration-200 hover:bg-[rgb(237,237,237)] self-start"
+            className="inline-flex items-center gap-2 rounded-full text-base md:text-sm font-medium transition-all duration-200 hover:bg-[rgb(237,237,237)]"
             style={{
               backgroundColor: "rgb(255,255,255)",
               color: "rgb(28,26,23)",
