@@ -37,7 +37,7 @@ const features: { icon: LucideIcon; title: string; description: string }[] = [
     icon: MapPin,
     title: "Endereço fiscal e comercial",
     description:
-      "Utilize nosso endereço premium no centro de São Paulo para CNPJ, correspondências e recebimento de encomendas.",
+      "Utilize nosso endereço premium no centro de Esteio para CNPJ, correspondências e recebimento de encomendas.",
   },
 ];
 
