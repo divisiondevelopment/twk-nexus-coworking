@@ -71,7 +71,7 @@ export default function About() {
                   fontFamily: "var(--font-body)",
                 }}
               >
-                Centro · Esteio · Desde 2019
+                TWK Nexus Coworking
               </span>
               <p
                 style={{

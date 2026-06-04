@@ -157,6 +157,19 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        <p className="text-xs text-center mt-6" style={{ color: "rgba(255,255,255,0.3)" }}>
+          Desenvolvido por{" "}
+          <a
+            href="https://divisiondev.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+            style={{ color: "rgba(255,255,255,0.3)", textDecoration: "none" }}
+          >
+            Division Development
+          </a>
+        </p>
       </div>
     </footer>
   );
