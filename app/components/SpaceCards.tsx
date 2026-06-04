@@ -258,7 +258,7 @@ export default function SpaceCards() {
   const [activeSpace, setActiveSpace] = useState<SpaceCardData | null>(null);
 
   return (
-    <section className="px-6 pb-16 md:pb-[120px]" style={{ backgroundColor: "rgb(250,250,250)" }}>
+    <section id="espacos" className="px-6 pb-16 md:pb-[120px]" style={{ backgroundColor: "rgb(250,250,250)" }}>
       <div className="max-w-[1300px] mx-auto">
         <Reveal>
           <div className="flex flex-col gap-3 mb-12">
