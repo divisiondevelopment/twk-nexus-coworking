@@ -47,7 +47,12 @@ export default function Navbar() {
           width={1024}
           height={487}
           priority
-          style={{ height: 36, width: "auto" }}
+          style={{
+            height: 36,
+            width: "auto",
+            filter: scrolled ? "none" : "brightness(0) invert(1)",
+            transition: "filter 0.2s",
+          }}
         />
       </a>
 
@@ -58,7 +63,11 @@ export default function Navbar() {
             key={link.href}
             href={link.href}
             className="text-sm leading-5 tracking-[-0.14px] transition-opacity duration-150 hover:opacity-70 whitespace-nowrap"
-            style={{ color: "rgb(28, 26, 23)", textDecoration: "none" }}
+            style={{
+              color: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
           >
             {link.label}
           </a>
@@ -90,21 +99,21 @@ export default function Navbar() {
         <span
           className="block w-5 h-0.5 transition-all duration-200"
           style={{
-            backgroundColor: "rgb(28, 26, 23)",
+            backgroundColor: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
             transform: open ? "rotate(45deg) translate(3px, 5px)" : "none",
           }}
         />
         <span
           className="block w-5 h-0.5 transition-all duration-200"
           style={{
-            backgroundColor: "rgb(28, 26, 23)",
+            backgroundColor: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
             opacity: open ? 0 : 1,
           }}
         />
         <span
           className="block w-5 h-0.5 transition-all duration-200"
           style={{
-            backgroundColor: "rgb(28, 26, 23)",
+            backgroundColor: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
             transform: open ? "rotate(-45deg) translate(3px, -5px)" : "none",
           }}
         />
