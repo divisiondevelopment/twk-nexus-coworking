@@ -1,6 +1,6 @@
 import AnnouncementBar from "./components/AnnouncementBar";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import HeroCarousel from "./components/HeroCarousel";
 import SpaceCards from "./components/SpaceCards";
 import About from "./components/About";
 import Cowork from "./components/Cowork";
@@ -19,10 +19,9 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <div className="max-w-[1300px] mx-auto">
-          <Hero />
-        </div>
+        <HeroCarousel />
 
+        <div className="mt-20 sm:mt-28" />
         <SpaceCards />
         <About />
         <Cowork />
