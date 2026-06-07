@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Home", href: "#" },
@@ -92,31 +93,14 @@ export default function Navbar() {
 
       {/* Hamburger (mobile) */}
       <button
-        className="lg:hidden flex flex-col gap-1.5 p-2"
+        className="lg:hidden flex items-center justify-center p-2"
         onClick={() => setOpen(!open)}
         aria-label={open ? "Fechar menu" : "Abrir menu"}
       >
-        <span
-          className="block w-5 h-0.5 transition-all duration-200"
-          style={{
-            backgroundColor: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
-            transform: open ? "rotate(45deg) translate(3px, 5px)" : "none",
-          }}
-        />
-        <span
-          className="block w-5 h-0.5 transition-all duration-200"
-          style={{
-            backgroundColor: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
-            opacity: open ? 0 : 1,
-          }}
-        />
-        <span
-          className="block w-5 h-0.5 transition-all duration-200"
-          style={{
-            backgroundColor: scrolled ? "rgb(28, 26, 23)" : "#ffffff",
-            transform: open ? "rotate(-45deg) translate(3px, -5px)" : "none",
-          }}
-        />
+        {open
+          ? <X size={22} strokeWidth={2} style={{ color: scrolled ? "rgb(28, 26, 23)" : "#ffffff" }} />
+          : <Menu size={22} strokeWidth={2} style={{ color: scrolled ? "rgb(28, 26, 23)" : "#ffffff" }} />
+        }
       </button>
 
       {/* Mobile drawer */}

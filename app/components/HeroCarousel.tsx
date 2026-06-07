@@ -9,26 +9,58 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const WA = "5551999999999";
 const wa = (msg: string) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
 
-const slides = [
+type Slide = {
+  tag: string;
+  title: string;
+  description: string;
+  accentColor: string;
+  imageSrc: string;
+  imagePosition?: string;
+  cta: string;
+  ctaHref: string;
+};
+
+const slides: Slide[] = [
   {
     tag: "Trabalho em Equipe",
     title: "Sala Energia",
     description:
       "Ambiente dinâmico e estimulante para equipes que precisam de foco e colaboração intensa. Equipada com quadro branco, TV 4K e fibra dedicada.",
     accentColor: "#007CD2",
-    imageSrc: "/images/coworking-hero-5.jpg",
+    imageSrc: "/images/espacos/espacos-3.jpeg",
     cta: "Reservar agora",
     ctaHref: wa("Olá, quero reservar a Sala Energia na TWK Nexus."),
   },
   {
     tag: "Coworking Aberto",
-    title: "Sala Compartilhada",
+    title: "Espaços Compartilhados",
     description:
       "Estações ergonômicas, climatização precisa e a energia certa para um dia altamente produtivo — rodeado de profissionais que pensam grande.",
     accentColor: "#007CD2",
-    imageSrc: "/images/coworking-hero-1.jpg",
+    imageSrc: "/images/espacos/espacos-1.jpeg",
     cta: "Conhecer planos",
-    ctaHref: wa("Olá, quero conhecer os planos da Sala Compartilhada na TWK Nexus."),
+    ctaHref: wa("Olá, quero conhecer os planos dos Espaços Compartilhados na TWK Nexus."),
+  },
+  {
+    tag: "Criatividade & Inovação",
+    title: "Sala Inspiração",
+    description:
+      "Ambiente criativo com design diferenciado para estimular o pensamento inovador — ideal para brainstorming, workshops e desenvolvimento de projetos.",
+    accentColor: "#007CD2",
+    imageSrc: "/images/espacos/espacos-5.jpeg",
+    cta: "Saiba mais",
+    ctaHref: wa("Olá, quero mais informações sobre a Sala Inspiração na TWK Nexus."),
+  },
+  {
+    tag: "Espaço Fixo",
+    title: "Mesa Fixa",
+    description:
+      "Sua estação de trabalho exclusiva e personalizada, com endereço fixo no espaço para você e seus pertences — como ter seu próprio escritório.",
+    accentColor: "#007CD2",
+    imageSrc: "/images/espacos/espacos-7.jpeg",
+    imagePosition: "center 35%",
+    cta: "Conhecer planos",
+    ctaHref: wa("Olá, quero mais informações sobre a Mesa Fixa na TWK Nexus."),
   },
   {
     tag: "Eventos & Treinamentos",
@@ -46,11 +78,12 @@ const slides = [
     description:
       "Espaço premium para confraternizações, happy hours e eventos corporativos gastronômicos. Cozinha equipada com ilha central e área de convivência.",
     accentColor: "#007CD2",
-    imageSrc: "/images/coworking-hero-2.jpg",
+    imageSrc: "/images/espacos/espacos-6.jpeg",
+    imagePosition: "center 35%",
     cta: "Agendar evento",
     ctaHref: wa("Olá, quero agendar um evento na Cozinha Gourmet da TWK Nexus."),
   },
-] as const;
+];
 
 const AUTOPLAY_MS = 5000;
 
@@ -100,17 +133,30 @@ export default function HeroCarousel() {
   const slide = slides[active];
 
   const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchStartTime = useRef<number>(0);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    touchStartTime.current = Date.now();
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const delta = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(delta) < 40) return;
-    delta > 0 ? next() : prev();
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const deltaX = touchStartX.current - e.changedTouches[0].clientX;
+    const deltaY = touchStartY.current - e.changedTouches[0].clientY;
     touchStartX.current = null;
+    touchStartY.current = null;
+
+    // Ignora se o gesto for predominantemente vertical
+    if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+
+    const velocity = Math.abs(deltaX) / (Date.now() - touchStartTime.current);
+    const isSwipe = Math.abs(deltaX) > 20 || velocity > 0.3;
+    if (!isSwipe) return;
+
+    deltaX > 0 ? next() : prev();
   };
 
   return (
@@ -133,7 +179,7 @@ export default function HeroCarousel() {
             fill
             priority={i === 0}
             sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center" }}
+            style={{ objectFit: "cover", objectPosition: s.imagePosition ?? "center" }}
           />
         </div>
       ))}

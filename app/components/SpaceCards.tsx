@@ -20,11 +20,11 @@ type SpaceCardData = {
 
 const spaces: SpaceCardData[] = [
   {
-    src: "/images/coworking-hero-1.jpg",
+    src: "/images/espacos/espacos-3.jpeg",
     alt: "Sala Energia TWK Nexus",
     title: "Sala Energia",
     description: "Ambiente estimulante com iluminação especial para máxima concentração.",
-    images: ["/images/coworking-hero-1.jpg", "/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg"],
+    images: ["/images/espacos/espacos-3.jpeg", "/images/espacos/espacos-4.jpeg"],
     features: [
       "Iluminação especial para maior concentração",
       "Mobiliário ergonômico e confortável",
@@ -34,18 +34,18 @@ const spaces: SpaceCardData[] = [
     ctaHref: waHref("Olá, quero mais informações sobre a Sala Energia da TWK Nexus."),
   },
   {
-    src: "/images/coworking-hero-2.jpg",
-    alt: "Sala Compartilhada TWK Nexus",
-    title: "Sala Compartilhada",
+    src: "/images/espacos/espacos-1.jpeg",
+    alt: "Espaços Compartilhados TWK Nexus",
+    title: "Espaços Compartilhados",
     description: "Espaço colaborativo com mesas compartilhadas e comunidade produtiva.",
-    images: ["/images/coworking-hero-2.jpg", "/images/coworking-hero-4.jpg", "/images/coworking-hero-1.jpg"],
+    images: ["/images/espacos/espacos-1.jpeg", "/images/espacos/espacos-2.jpeg"],
     features: [
       "Mesas e áreas de trabalho compartilhadas",
       "Ambiente colaborativo e inspirador",
       "Café e copa incluso",
       "Internet de alta velocidade",
     ],
-    ctaHref: waHref("Olá, quero mais informações sobre a Sala Compartilhada da TWK Nexus."),
+    ctaHref: waHref("Olá, quero mais informações sobre os Espaços Compartilhados da TWK Nexus."),
   },
   {
     src: "/images/coworking-hero-5.jpg",
@@ -61,11 +61,11 @@ const spaces: SpaceCardData[] = [
     ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
   },
   {
-    src: "/images/coworking-hero-3.jpg",
+    src: "/images/espacos/espacos-5.jpeg",
     alt: "Sala Inspiração TWK Nexus",
     title: "Sala Inspiração",
     description: "Ambiente criativo para brainstorming, inovação e desenvolvimento de projetos.",
-    images: ["/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg", "/images/coworking-hero-5.jpg"],
+    images: ["/images/espacos/espacos-5.jpeg"],
     features: [
       "Ambiente criativo e estimulante",
       "Ideal para brainstorming e inovação",
@@ -73,6 +73,21 @@ const spaces: SpaceCardData[] = [
       "Internet de alta velocidade",
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Sala Inspiração da TWK Nexus."),
+  },
+  {
+    src: "/images/espacos/espacos-7.jpeg",
+    alt: "Mesa Fixa TWK Nexus",
+    title: "Mesa Fixa",
+    description: "Estação de trabalho exclusiva e personalizada, com endereço fixo no espaço.",
+    images: ["/images/espacos/espacos-7.jpeg"],
+    features: [
+      "Mesa exclusiva e permanente",
+      "Armário individual para guardar pertences",
+      "Acesso ao espaço em horário estendido",
+      "Internet de alta velocidade",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Mesa Fixa da TWK Nexus."),
+    imagePosition: "center 35%",
   },
   {
     src: "/images/coworking-hero-4.jpg",
@@ -89,11 +104,11 @@ const spaces: SpaceCardData[] = [
     ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
   },
   {
-    src: "/images/coworking-hero-3.jpg",
+    src: "/images/espacos/espacos-6.jpeg",
     alt: "Cozinha Gourmet TWK Nexus",
     title: "Cozinha Gourmet",
     description: "Infraestrutura para treinamentos gastronômicos, workshops e gravações culinárias.",
-    images: ["/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg", "/images/coworking-hero-5.jpg", "/images/coworking-hero-4.jpg"],
+    images: ["/images/espacos/espacos-6.jpeg", "/images/espacos/espacos-8.jpeg"],
     features: [
       "Ambiente preparado para treinamentos gastronômicos",
       "Ideal para pizzaiolos, chefs, confeiteiros e workshops",
@@ -101,6 +116,7 @@ const spaces: SpaceCardData[] = [
       "Infraestrutura para cursos, degustações e experiências gastronômicas",
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Cozinha Gourmet da TWK Nexus."),
+    imagePosition: "center 35%",
   },
 ];
 
@@ -189,7 +205,7 @@ function SpaceCard({
                 src={space.src}
                 alt={space.alt}
                 fill
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ objectFit: "cover", objectPosition: space.imagePosition ?? "center" }}
               />
             </div>
           </div>
