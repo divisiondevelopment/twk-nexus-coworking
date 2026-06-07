@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const col1 = [
-  { src: "/images/coworking-hero-1.jpg", alt: "Área aberta TWK Nexus",     label: "Área Aberta",      flex: "1.75" },
-  { src: "/images/coworking-hero-2.jpg", alt: "Lounge TWK Nexus",           label: "Lounge",           flex: "1"    },
+  { src: "/images/espacos/espacos-1.jpeg", alt: "Espaços Compartilhados TWK Nexus", label: "Espaços Compartilhados", flex: "1.75" },
+  { src: "/images/espacos/espacos-3.jpeg", alt: "Sala Energia TWK Nexus",           label: "Sala Energia",           flex: "1"    },
 ];
 
 const col2 = [
-  { src: "/images/coworking-hero-3.jpg", alt: "Copa TWK Nexus",             label: "Copa & Café",      flex: "0.7"  },
-  { src: "/images/coworking-hero-4.jpg", alt: "Sala privativa TWK Nexus",   label: "Sala Privativa",   flex: "1.55" },
-  { src: "/images/coworking-hero-5.jpg", alt: "Espaço de eventos TWK Nexus",label: "Espaço de Eventos",flex: "0.75" },
+  { src: "/images/espacos/espacos-5.jpeg", alt: "Sala Inspiração TWK Nexus",  label: "Sala Inspiração",  flex: "0.7"  },
+  { src: "/images/espacos/espacos-7.jpeg", alt: "Mesa Fixa TWK Nexus",        label: "Mesa Fixa",        flex: "1.55" },
+  { src: "/images/espacos/espacos-6.jpeg", alt: "Cozinha Gourmet TWK Nexus",  label: "Cozinha Gourmet",  flex: "0.75" },
 ];
 
 

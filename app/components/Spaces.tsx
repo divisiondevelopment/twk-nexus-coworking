@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Zap, Users, Mic2, Lightbulb, UtensilsCrossed } from "lucide-react";
+import { Zap, Users, Mic2, Lightbulb, UtensilsCrossed, Monitor } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import SpaceDialog, { type DialogSpaceData } from "./SpaceDialog";
 
@@ -27,15 +27,14 @@ const spaces: Space[] = [
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Sala Energia da TWK Nexus."),
     images: [
-      "/images/coworking-hero-1.jpg",
-      "/images/coworking-hero-3.jpg",
-      "/images/coworking-hero-2.jpg",
+      "/images/espacos/espacos-3.jpeg",
+      "/images/espacos/espacos-4.jpeg",
     ],
   },
   {
-    id: "sala-compartilhada",
+    id: "espacos-compartilhados",
     icon: Users,
-    title: "Sala Compartilhada",
+    title: "Espaços Compartilhados",
     description:
       "Espaço colaborativo com mesas e áreas de trabalho compartilhadas, ideal para profissionais que buscam uma comunidade produtiva.",
     features: [
@@ -44,11 +43,10 @@ const spaces: Space[] = [
       "Café e copa incluso",
       "Internet de alta velocidade",
     ],
-    ctaHref: waHref("Olá, quero mais informações sobre a Sala Compartilhada da TWK Nexus."),
+    ctaHref: waHref("Olá, quero mais informações sobre os Espaços Compartilhados da TWK Nexus."),
     images: [
-      "/images/coworking-hero-2.jpg",
-      "/images/coworking-hero-4.jpg",
-      "/images/coworking-hero-1.jpg",
+      "/images/espacos/espacos-1.jpeg",
+      "/images/espacos/espacos-2.jpeg",
     ],
   },
   {
@@ -83,10 +81,26 @@ const spaces: Space[] = [
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Sala Inspiração da TWK Nexus."),
     images: [
-      "/images/coworking-hero-3.jpg",
-      "/images/coworking-hero-2.jpg",
-      "/images/coworking-hero-5.jpg",
+      "/images/espacos/espacos-5.jpeg",
     ],
+  },
+  {
+    id: "mesa-fixa",
+    icon: Monitor,
+    title: "Mesa Fixa",
+    description:
+      "Estação de trabalho exclusiva e personalizada, com endereço fixo no espaço para você e seus pertences.",
+    features: [
+      "Mesa exclusiva e permanente",
+      "Armário individual para guardar pertences",
+      "Acesso ao espaço em horário estendido",
+      "Internet de alta velocidade",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Mesa Fixa da TWK Nexus."),
+    images: [
+      "/images/espacos/espacos-7.jpeg",
+    ],
+    imagePosition: "center 35%",
   },
   {
     id: "auditorio-2",
@@ -121,11 +135,10 @@ const spaces: Space[] = [
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Cozinha Gourmet da TWK Nexus."),
     images: [
-      "/images/coworking-hero-3.jpg",
-      "/images/coworking-hero-2.jpg",
-      "/images/coworking-hero-5.jpg",
-      "/images/coworking-hero-4.jpg",
+      "/images/espacos/espacos-6.jpeg",
+      "/images/espacos/espacos-8.jpeg",
     ],
+    imagePosition: "center 35%",
   },
 ];
 

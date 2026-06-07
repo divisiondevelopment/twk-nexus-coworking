@@ -10,6 +10,7 @@ export interface DialogSpaceData {
   features: string[];
   ctaHref: string;
   images: string[];
+  imagePosition?: string;
 }
 
 function CheckIcon() {
@@ -121,7 +122,7 @@ export default function SpaceDialog({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Gallery */}
-        <div className="relative h-[240px] sm:h-[380px] flex-shrink-0 overflow-hidden">
+        <div className="relative h-[240px] sm:h-[min(380px,42vh)] flex-shrink-0 overflow-hidden">
           {space.images.map((src, i) => (
             <div
               key={src}
@@ -137,7 +138,7 @@ export default function SpaceDialog({
                 alt={space.title}
                 fill
                 sizes="(max-width: 800px) 100vw, 800px"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", objectPosition: space.imagePosition ?? "center" }}
               />
             </div>
           ))}
