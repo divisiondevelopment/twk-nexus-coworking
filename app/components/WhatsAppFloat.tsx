@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const HREF =
-  "https://wa.me/5551999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20TWK%20Nexus.";
+  "https://wa.me/5551983184368?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20TWK%20Nexus.";
 
 const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="white" aria-hidden="true">
@@ -13,6 +14,8 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
 
 export default function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  if (pathname === "/tree") return null;
 
   return (
     <div

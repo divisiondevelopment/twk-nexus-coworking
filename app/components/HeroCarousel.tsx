@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // ─── Slide data ───────────────────────────────────────────────────────────────
 
-const WA = "5551999999999";
+const WA = "5551983184368";
 const wa = (msg: string) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
 
 type Slide = {

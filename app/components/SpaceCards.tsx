@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 import SpaceDialog, { type DialogSpaceData } from "./SpaceDialog";
 
-const WA = "5551999999999";
+const WA = "5551983184368";
 function waHref(msg: string) {
   return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
 }
@@ -52,11 +52,12 @@ const spaces: SpaceCardData[] = [
     alt: "Auditório TWK Nexus",
     title: "Auditório",
     description: "Espaço completo para eventos corporativos, palestras e networking.",
-    images: ["/images/coworking-hero-5.jpg", "/images/coworking-hero-1.jpg", "/images/coworking-hero-3.jpg"],
+    images: ["/images/coworking-hero-5.jpg", "/images/coworking-hero-1.jpg", "/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg"],
     features: [
       "Espaço para palestras, treinamentos e eventos corporativos",
-      "Estrutura para networking empresarial",
-      "Ambiente moderno e funcional",
+      "Capacidade para grandes grupos",
+      "Equipamentos audiovisuais inclusos",
+      "Palco e área de networking",
     ],
     ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
   },
@@ -88,20 +89,6 @@ const spaces: SpaceCardData[] = [
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Mesa Fixa da TWK Nexus."),
     imagePosition: "center 35%",
-  },
-  {
-    src: "/images/coworking-hero-4.jpg",
-    alt: "Auditório TWK Nexus",
-    title: "Auditório",
-    description: "Infraestrutura para grandes eventos, treinamentos e networking empresarial.",
-    images: ["/images/coworking-hero-5.jpg", "/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg"],
-    features: [
-      "Capacidade para grandes grupos",
-      "Equipamentos audiovisuais inclusos",
-      "Palco e área de networking",
-      "Suporte técnico disponível",
-    ],
-    ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
   },
   {
     src: "/images/espacos/espacos-6.jpeg",

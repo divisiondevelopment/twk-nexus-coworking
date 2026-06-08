@@ -1,7 +1,7 @@
 import Reveal from "./Reveal";
 
 const WA_HREF =
-  "https://wa.me/5551999999999?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20coworking%20da%20TWK%20Nexus.";
+  "https://wa.me/5551983184368?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20coworking%20da%20TWK%20Nexus.";
 
 function WhatsAppIcon() {
   return (

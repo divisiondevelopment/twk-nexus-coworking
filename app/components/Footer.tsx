@@ -41,7 +41,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Eventos",   href: "#eventos"  },
   ],
   Contato: [
-    { label: "(51) 9 9999-9999",        href: "https://wa.me/5551999999999" },
+    { label: "(51) 9 8318-4368",        href: "https://wa.me/5551983184368" },
     { label: "contato@twknexus.com.br", href: "mailto:contato@twknexus.com.br" },
     { label: "Garibaldi, 240 – Sala 305\nCentro – Esteio/RS", href: "#contato" },
   ],

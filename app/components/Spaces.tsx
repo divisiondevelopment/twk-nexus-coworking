@@ -5,7 +5,7 @@ import { Zap, Users, Mic2, Lightbulb, UtensilsCrossed, Monitor } from "lucide-re
 import type { LucideIcon } from "lucide-react";
 import SpaceDialog, { type DialogSpaceData } from "./SpaceDialog";
 
-const WA = "5551999999999";
+const WA = "5551983184368";
 function waHref(msg: string) {
   return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
 }
@@ -50,21 +50,23 @@ const spaces: Space[] = [
     ],
   },
   {
-    id: "auditorio-1",
+    id: "auditorio",
     icon: Mic2,
     title: "Auditório",
     description:
       "Espaço completo para eventos corporativos, palestras e networking empresarial de alto nível, com infraestrutura moderna e funcional.",
     features: [
       "Espaço para palestras, treinamentos e eventos corporativos",
-      "Estrutura para networking empresarial",
-      "Ambiente moderno e funcional",
+      "Capacidade para grandes grupos",
+      "Equipamentos audiovisuais inclusos",
+      "Palco e área de networking",
     ],
     ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
     images: [
       "/images/coworking-hero-5.jpg",
       "/images/coworking-hero-1.jpg",
       "/images/coworking-hero-3.jpg",
+      "/images/coworking-hero-2.jpg",
     ],
   },
   {
@@ -101,25 +103,6 @@ const spaces: Space[] = [
       "/images/espacos/espacos-7.jpeg",
     ],
     imagePosition: "center 35%",
-  },
-  {
-    id: "auditorio-2",
-    icon: Mic2,
-    title: "Auditório",
-    description:
-      "Infraestrutura completa para grandes eventos, treinamentos e experiências de networking que conectam profissionais e empresas.",
-    features: [
-      "Capacidade para grandes grupos",
-      "Equipamentos audiovisuais inclusos",
-      "Palco e área de networking",
-      "Suporte técnico disponível",
-    ],
-    ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
-    images: [
-      "/images/coworking-hero-5.jpg",
-      "/images/coworking-hero-3.jpg",
-      "/images/coworking-hero-2.jpg",
-    ],
   },
   {
     id: "cozinha-gourmet",

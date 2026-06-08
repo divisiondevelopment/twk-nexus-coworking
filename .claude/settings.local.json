@@ -11,7 +11,10 @@
       "Bash(node *)",
       "Bash(python3 -c ' *)",
       "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/bernardomesquita/projetos/twk-nexus/public/logo-twk-nexus.png'\\); print\\(img.size\\)\")",
-      "Bash(xargs ls)"
+      "Bash(xargs ls)",
+      "Bash(npx next *)",
+      "Bash(npx playwright *)",
+      "Bash(kill %1)"
     ]
   }
 }

@@ -3,7 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import Reveal from "./Reveal";
 
 const WA_HREF =
-  "https://wa.me/5551999999999?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20eventos%20da%20TWK%20Nexus.";
+  "https://wa.me/5551983184368?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20os%20eventos%20da%20TWK%20Nexus.";
 
 const events: { icon: LucideIcon; title: string; description: string }[] = [
   {
