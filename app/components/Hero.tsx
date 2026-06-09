@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const col1 = [
   { src: "/images/espacos/espacos-1.jpeg", alt: "Espaços Compartilhados TWK Nexus", label: "Espaços Compartilhados", flex: "1.75" },
-  { src: "/images/espacos/espacos-3.jpeg", alt: "Sala Energia TWK Nexus",           label: "Sala Energia",           flex: "1"    },
+  { src: "/images/espacos/sala-energia-1.jpeg", alt: "Sala Energia TWK Nexus",           label: "Sala Energia",           flex: "1"    },
 ];
 
 const col2 = [

@@ -27,7 +27,7 @@ const slides: Slide[] = [
     description:
       "Ambiente dinâmico e estimulante para equipes que precisam de foco e colaboração intensa. Equipada com quadro branco, TV 4K e fibra dedicada.",
     accentColor: "#007CD2",
-    imageSrc: "/images/espacos/espacos-3.jpeg",
+    imageSrc: "/images/espacos/sala-energia-1.jpeg",
     cta: "Reservar agora",
     ctaHref: wa("Olá, quero reservar a Sala Energia na TWK Nexus."),
   },

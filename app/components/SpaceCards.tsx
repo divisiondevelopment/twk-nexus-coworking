@@ -20,11 +20,19 @@ type SpaceCardData = {
 
 const spaces: SpaceCardData[] = [
   {
-    src: "/images/espacos/espacos-3.jpeg",
+    src: "/images/espacos/sala-energia-1.jpeg",
     alt: "Sala Energia TWK Nexus",
     title: "Sala Energia",
     description: "Ambiente estimulante com iluminação especial para máxima concentração.",
-    images: ["/images/espacos/espacos-3.jpeg", "/images/espacos/espacos-4.jpeg"],
+    images: [
+      "/images/espacos/sala-energia-1.jpeg",
+      "/images/espacos/sala-energia-2.jpeg",
+      "/images/espacos/sala-energia-3.jpeg",
+      "/images/espacos/sala-energia-4.jpeg",
+      "/images/espacos/sala-energia-5.jpeg",
+      "/images/espacos/sala-energia-6.jpeg",
+      "/images/espacos/sala-energia-7.jpeg",
+    ],
     features: [
       "Iluminação especial para maior concentração",
       "Mobiliário ergonômico e confortável",
