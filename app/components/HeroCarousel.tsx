@@ -68,7 +68,7 @@ const slides: Slide[] = [
     description:
       "Espaço para até 80 pessoas com projeção, sonorização profissional e controle de iluminação — ideal para lançamentos, palestras e workshops.",
     accentColor: "#007CD2",
-    imageSrc: "/images/coworking-hero-4.jpg",
+    imageSrc: "/images/espacos/auditorio-3.jpeg",
     cta: "Ver disponibilidade",
     ctaHref: wa("Olá, quero verificar a disponibilidade do Auditório na TWK Nexus."),
   },

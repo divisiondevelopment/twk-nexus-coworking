@@ -56,11 +56,11 @@ const spaces: SpaceCardData[] = [
     ctaHref: waHref("Olá, quero mais informações sobre os Espaços Compartilhados da TWK Nexus."),
   },
   {
-    src: "/images/coworking-hero-5.jpg",
+    src: "/images/espacos/auditorio-3.jpeg",
     alt: "Auditório TWK Nexus",
     title: "Auditório",
     description: "Espaço completo para eventos corporativos, palestras e networking.",
-    images: ["/images/coworking-hero-5.jpg", "/images/coworking-hero-1.jpg", "/images/coworking-hero-3.jpg", "/images/coworking-hero-2.jpg"],
+    images: ["/images/espacos/auditorio-3.jpeg", "/images/espacos/auditorio-1.jpeg", "/images/espacos/auditorio-2.jpeg"],
     features: [
       "Espaço para palestras, treinamentos e eventos corporativos",
       "Capacidade para grandes grupos",

@@ -68,10 +68,9 @@ const spaces: Space[] = [
     ],
     ctaHref: waHref("Olá, quero mais informações sobre o Auditório da TWK Nexus."),
     images: [
-      "/images/coworking-hero-5.jpg",
-      "/images/coworking-hero-1.jpg",
-      "/images/coworking-hero-3.jpg",
-      "/images/coworking-hero-2.jpg",
+      "/images/espacos/auditorio-3.jpeg",
+      "/images/espacos/auditorio-1.jpeg",
+      "/images/espacos/auditorio-2.jpeg",
     ],
   },
   {
