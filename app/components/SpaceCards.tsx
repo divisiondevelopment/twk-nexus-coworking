@@ -38,6 +38,9 @@ const spaces: SpaceCardData[] = [
       "Mobiliário ergonômico e confortável",
       "Ambiente climatizado e silencioso",
       "Internet de alta velocidade",
+      "Banheiro exclusivo",
+      "Adega",
+      "Armário com luzes de LED",
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Sala Energia da TWK Nexus."),
   },
@@ -63,7 +66,7 @@ const spaces: SpaceCardData[] = [
     images: ["/images/espacos/auditorio-3.jpeg", "/images/espacos/auditorio-1.jpeg", "/images/espacos/auditorio-2.jpeg"],
     features: [
       "Espaço para palestras, treinamentos e eventos corporativos",
-      "Capacidade para grandes grupos",
+      "Cursos",
       "Equipamentos audiovisuais inclusos",
       "Palco e área de networking",
     ],

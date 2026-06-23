@@ -25,7 +25,7 @@ const slides: Slide[] = [
     tag: "Trabalho em Equipe",
     title: "Sala Energia",
     description:
-      "Ambiente dinâmico e estimulante para equipes que precisam de foco e colaboração intensa. Equipada com quadro branco, TV 4K e fibra dedicada.",
+      "Ambiente dinâmico e estimulante para equipes que precisam de foco e colaboração intensa.",
     accentColor: "#007CD2",
     imageSrc: "/images/espacos/sala-energia-1.jpeg",
     cta: "Reservar agora",
@@ -66,7 +66,7 @@ const slides: Slide[] = [
     tag: "Eventos & Treinamentos",
     title: "Auditório",
     description:
-      "Espaço para até 80 pessoas com projeção, sonorização profissional e controle de iluminação — ideal para lançamentos, palestras e workshops.",
+      "Espaço com projeção, sonorização profissional e controle de iluminação — ideal para lançamentos, palestras e workshops.",
     accentColor: "#007CD2",
     imageSrc: "/images/espacos/auditorio-3.jpeg",
     cta: "Ver disponibilidade",
@@ -384,7 +384,7 @@ const slides = [
     tag: "Trabalho em Equipe",
     title: "Sala Energia",
     description:
-      "Ambiente dinâmico e estimulante para equipes que precisam de foco e colaboração intensa. Equipada com quadro branco, TV 4K e fibra dedicada.",
+      "Ambiente dinâmico e estimulante para equipes que precisam de foco e colaboração intensa.",
     accentColor: "#007CD2",
     imageSrc: "/images/coworking-hero-5.jpg",
     cta: "Reservar agora",
@@ -402,7 +402,7 @@ const slides = [
     tag: "Eventos & Treinamentos",
     title: "Auditório",
     description:
-      "Espaço para até 80 pessoas com projeção, sonorização profissional e controle de iluminação — ideal para lançamentos, palestras e workshops.",
+      "Espaço com projeção, sonorização profissional e controle de iluminação — ideal para lançamentos, palestras e workshops.",
     accentColor: "#007CD2",
     imageSrc: "/images/coworking-hero-4.jpg",
     cta: "Ver disponibilidade",

@@ -24,6 +24,9 @@ const spaces: Space[] = [
       "Mobiliário ergonômico e confortável",
       "Ambiente climatizado e silencioso",
       "Internet de alta velocidade",
+      "Banheiro exclusivo",
+      "Adega",
+      "Armário com luzes de LED",
     ],
     ctaHref: waHref("Olá, quero mais informações sobre a Sala Energia da TWK Nexus."),
     images: [
@@ -62,7 +65,6 @@ const spaces: Space[] = [
       "Espaço completo para eventos corporativos, palestras e networking empresarial de alto nível, com infraestrutura moderna e funcional.",
     features: [
       "Espaço para palestras, treinamentos e eventos corporativos",
-      "Capacidade para grandes grupos",
       "Equipamentos audiovisuais inclusos",
       "Palco e área de networking",
     ],

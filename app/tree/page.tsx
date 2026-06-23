@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Globe, CalendarCheck, Star, MapPin } from "lucide-react";
+import { Globe, CalendarCheck, Star, MapPin, Building2, Layers } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "TWK Nexus — Links",
-  description: "Coworking e ecossistema de negócios em Esteio/RS",
+  description: "Coworking, networking e ecossistema de negócios em Esteio/RS. Conectando empresas, profissionais e oportunidades de negócios.",
 };
 
 function InstagramIcon({ size, color }: { size: number; color: string }) {
@@ -35,24 +35,38 @@ type LinkItem =
 const links: LinkItem[] = [
   {
     kind: "lucide",
+    Icon: Building2,
+    label: "Conheça nossos espaços",
+    subtitle: "Salas, auditório e ambientes colaborativos",
+    href: "https://www.twknexus.com.br/#espacos",
+  },
+  {
+    kind: "lucide",
+    Icon: CalendarCheck,
+    label: "Agendar visita",
+    subtitle: "Via WhatsApp, sem burocracia",
+    href: "https://wa.me/5551983184368?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20visita%20%C3%A0%20TWK%20Nexus.",
+  },
+  {
+    kind: "lucide",
     Icon: Globe,
     label: "Acesse nosso site",
     subtitle: "twknexus.com.br",
     href: "https://www.twknexus.com.br/",
   },
   {
-    kind: "lucide",
-    Icon: CalendarCheck,
-    label: "Agendar espaço",
-    subtitle: "Via WhatsApp, sem burocracia",
-    href: "https://wa.me/5551983184368?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20espa%C3%A7o%20na%20TWK%20Nexus.",
-  },
-  {
     kind: "custom",
     Icon: InstagramIcon,
-    label: "Instagram",
+    label: "Instagram @twknexus",
     subtitle: "@twknexus",
     href: "https://instagram.com/twknexus",
+  },
+  {
+    kind: "lucide",
+    Icon: Layers,
+    label: "Conheça nossos espaços, eventos e conexões",
+    subtitle: "twknexus.com.br",
+    href: "https://www.twknexus.com.br/",
   },
   {
     kind: "lucide",
@@ -64,8 +78,8 @@ const links: LinkItem[] = [
   {
     kind: "lucide",
     Icon: MapPin,
-    label: "Como chegar",
-    subtitle: "Esteio, Rio Grande do Sul",
+    label: "Como chegar — Rua Garibaldi 240, sala 305, Centro / Esteio RS",
+    subtitle: "Ver no Google Maps",
     href: "https://maps.google.com/?q=R.+Garibaldi,+240,+Sala+305,+Centro,+Esteio,+RS",
   },
 ];
@@ -117,7 +131,7 @@ export default function TreePage() {
             className="text-sm leading-5"
             style={{ color: "rgba(28,26,23,0.56)" }}
           >
-            Coworking e ecossistema de negócios em Esteio/RS
+            Coworking, networking e ecossistema de negócios em Esteio/RS. Conectando empresas, profissionais e oportunidades de negócios.
           </p>
         </div>
 
@@ -125,7 +139,7 @@ export default function TreePage() {
         <div className="w-full flex flex-col gap-4">
           {links.map((link) => (
             <a
-              key={link.href}
+              key={link.href + link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -156,6 +170,22 @@ export default function TreePage() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Fale conosco */}
+        <div className="flex flex-col items-center gap-1 text-center">
+          <p className="text-xs font-semibold" style={{ color: "rgba(28,26,23,0.50)" }}>
+            Fale conosco
+          </p>
+          <a
+            href="https://wa.me/5551983184368"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium"
+            style={{ color: "#007CD2", textDecoration: "none" }}
+          >
+            (51) 98318-4368
+          </a>
         </div>
 
         {/* Footer */}

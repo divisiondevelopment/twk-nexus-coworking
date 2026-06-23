@@ -58,7 +58,7 @@ export default function CTASection() {
                 Agendar pelo WhatsApp
               </a>
               <a
-                href="mailto:contato@twknexus.com.br"
+                href="mailto:twknexus@gmail.com"
                 className="inline-flex items-center rounded-full text-base md:text-sm font-medium leading-5 tracking-[-0.14px] transition-opacity duration-200 hover:opacity-70"
                 style={{
                   color: "rgba(255,255,255,0.72)",
@@ -88,7 +88,7 @@ export default function CTASection() {
               (51) 9 8318-4368
             </a>
             <a
-              href="mailto:contato@twknexus.com.br"
+              href="mailto:twknexus@gmail.com"
               className="inline-flex items-center gap-2 text-base md:text-sm transition-opacity duration-150 hover:opacity-70"
               style={{ color: "rgb(80, 80, 80)", textDecoration: "none" }}
             >
@@ -96,7 +96,7 @@ export default function CTASection() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              contato@twknexus.com.br
+              twknexus@gmail.com
             </a>
             <span
               className="inline-flex items-center gap-2 text-base md:text-sm"
