@@ -312,7 +312,7 @@ export default function HeroCarousel() {
       <button
         onClick={prev}
         aria-label="Slide anterior"
-        className="hidden sm:flex absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all"
+        className="flex absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all"
         style={{
           width: 44,
           height: 44,
@@ -335,7 +335,7 @@ export default function HeroCarousel() {
       <button
         onClick={next}
         aria-label="Próximo slide"
-        className="hidden sm:flex absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all"
+        className="flex absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all"
         style={{
           width: 44,
           height: 44,
