@@ -68,7 +68,7 @@ const slides: Slide[] = [
     description:
       "Espaço com projeção, sonorização profissional e controle de iluminação — ideal para lançamentos, palestras e workshops.",
     accentColor: "#007CD2",
-    imageSrc: "/images/espacos/auditorio-3.jpeg",
+    imageSrc: "/images/espacos/auditorio-4.png",
     cta: "Ver disponibilidade",
     ctaHref: wa("Olá, quero verificar a disponibilidade do Auditório na TWK Nexus."),
   },

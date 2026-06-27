@@ -22,26 +22,56 @@ export default function About() {
 
         {/* ── Image composition ── */}
         <Reveal>
-          <div style={{ position: "relative" }}>
+          <div className="pt-[177%] sm:pt-[41.67%]" style={{ position: "relative" }}>
 
-            {/* SVG carries the clip-path and the photo — scales with width automatically */}
-            <svg
-              viewBox="0 0 1200 500"
-              style={{ width: "100%", display: "block" }}
-              aria-hidden="true"
-            >
+            {/* SVG serves only as clip-path definition container */}
+            <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
               <defs>
-                <clipPath id="about-clip">
-                  <path d={CLIP_PATH} />
+                <clipPath id="about-clip" clipPathUnits="objectBoundingBox">
+                  <path d={CLIP_PATH} transform={`scale(${1 / 1200}, ${1 / 500})`} />
                 </clipPath>
               </defs>
-              <image
-                href="/images/coworking-hero-1.jpg"
-                x="0" y="0" width="1200" height="500"
-                preserveAspectRatio="xMidYMid slice"
-                clipPath="url(#about-clip)"
-              />
             </svg>
+
+            {/* Desktop video */}
+            <video
+              className="hidden sm:block"
+              src="/videos/video-twk-desktop.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                clipPath: "url(#about-clip)",
+              }}
+            />
+
+            {/* Mobile video */}
+            <video
+              className="block sm:hidden"
+              src="/videos/video-twk-mobile.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                borderRadius: "24px",
+              }}
+            />
 
             {/* Card — sits flush in the notch cutout */}
             <div
