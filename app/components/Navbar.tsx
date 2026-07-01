@@ -8,7 +8,7 @@ const links = [
   { label: "Home", href: "#" },
   { label: "Espaços", href: "#espacos" },
   { label: "História", href: "#historia" },
-  { label: "Cowork", href: "#cowork" },
+  { label: "Coworking", href: "#cowork" },
   { label: "Eventos e Networking", href: "#eventos" },
   { label: "Contato", href: "#contato" },
 ];

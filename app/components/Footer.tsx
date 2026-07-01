@@ -29,11 +29,17 @@ const socialLinks = [
   { icon: YouTubeIcon, href: "#", label: "YouTube" },
 ];
 
-const footerLinks: Record<string, { label: string; href: string }[]> = {
+const footerLinks: Record<string, { label: string; href?: string }[]> = {
   Espaços: [
-    { label: "Salas de Reunião", href: "#salas-de-reuniao" },
-    { label: "Auditório",        href: "#auditorio"       },
-    { label: "Cozinha Gourmet",  href: "#cozinha-gourmet" },
+    { label: "Salas de Reunião" },
+    { label: "Auditório" },
+    { label: "Cozinha para treinamentos de gastronomia" },
+    { label: "Espaços rotativos" },
+    { label: "Espaços compartilhados" },
+    { label: "Mesa fixa" },
+    { label: "Salas privativas" },
+    { label: "Espaço para eventos" },
+    { label: "Cozinha para refeições e convivência" },
   ],
   Empresa: [
     { label: "Sobre nós", href: "#historia" },
@@ -55,7 +61,7 @@ export default function Footer() {
     >
       <div className="max-w-[1300px] mx-auto">
         <div
-          className="grid gap-8 md:gap-10 mb-10 md:mb-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-8 md:gap-10 mb-10 md:mb-16 grid-cols-1 sm:grid-cols-[repeat(2,minmax(220px,1fr))] lg:grid-cols-[repeat(4,minmax(200px,1fr))]"
         >
           <div className="flex flex-col gap-4">
             <Image
@@ -106,20 +112,35 @@ export default function Footer() {
               >
                 {section}
               </p>
-              {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-base md:text-sm font-medium transition-opacity duration-150 hover:opacity-70"
-                  style={{
-                    color: "rgba(255,255,255,0.72)",
-                    textDecoration: "none",
-                    whiteSpace: "pre-line",
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link) =>
+                link.href ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-base md:text-sm font-medium transition-opacity duration-150 hover:opacity-70"
+                    style={{
+                      color: "rgba(255,255,255,0.72)",
+                      textDecoration: "none",
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <span
+                    key={link.label}
+                    className="text-base md:text-sm font-medium"
+                    style={{
+                      color: "rgba(255,255,255,0.72)",
+                      whiteSpace: "pre-line",
+                      overflowWrap: "break-word",
+                      wordBreak: "break-word",
+                    }}
+                  >
+                    {link.label}
+                  </span>
+                )
+              )}
             </div>
           ))}
         </div>

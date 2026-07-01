@@ -65,6 +65,7 @@ export default function SpaceDialog({
   const [imgIdx, setImgIdx] = useState(0);
   const [mounted, setMounted] = useState(false);
   const count = space.images.length;
+  const isSalaProgresso = space.title === "Sala Progresso";
 
   const prev = useCallback(
     () => setImgIdx((i) => (i - 1 + count) % count),
@@ -138,7 +139,10 @@ export default function SpaceDialog({
                 alt={space.title}
                 fill
                 sizes="(max-width: 800px) 100vw, 800px"
-                style={{ objectFit: "cover", objectPosition: space.imagePosition ?? "center" }}
+                style={{
+                  objectFit: "cover",
+                  objectPosition: isSalaProgresso ? "center 60%" : space.imagePosition ?? "center",
+                }}
               />
             </div>
           ))}

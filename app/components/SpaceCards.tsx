@@ -116,6 +116,26 @@ const spaces: SpaceCardData[] = [
     ctaHref: waHref("Olá, quero mais informações sobre a Cozinha Gourmet da TWK Nexus."),
     imagePosition: "center 35%",
   },
+  {
+    src: "/images/espacos/sala-progresso-1.png",
+    alt: "Sala Progresso TWK Nexus",
+    title: "Sala Progresso",
+    description:
+      "Um ambiente pensado para conversas que transformam resultados. Um espaço reservado, elegante e acolhedor, onde cada encontro representa um passo em direção ao progresso.",
+    images: ["/images/espacos/sala-progresso-1.png"],
+    features: [
+      "Psicólogos e terapeutas",
+      "Coaches e mentores",
+      "Consultores",
+      "Advogados",
+      "Nutricionistas",
+      "Recrutadores e profissionais de RH",
+      "Reuniões individuais",
+      "Entrevistas",
+      "Videochamadas e mentorias online",
+    ],
+    ctaHref: waHref("Olá, quero mais informações sobre a Sala Progresso da TWK Nexus."),
+  },
 ];
 
 const CIRCLE_SIZE = 148;
