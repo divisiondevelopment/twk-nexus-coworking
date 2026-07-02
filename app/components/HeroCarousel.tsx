@@ -321,6 +321,7 @@ export default function HeroCarousel() {
           backdropFilter: "blur(6px)",
           color: "#ffffff",
           cursor: "pointer",
+          zIndex: 60,
         }}
         onMouseEnter={(e) =>
           (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.22)")
@@ -344,6 +345,7 @@ export default function HeroCarousel() {
           backdropFilter: "blur(6px)",
           color: "#ffffff",
           cursor: "pointer",
+          zIndex: 60,
         }}
         onMouseEnter={(e) =>
           (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.22)")
